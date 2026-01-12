@@ -1,16 +1,32 @@
+# AgentBeats Leaderboard Assessment Scenario
+# This file defines the assessment configuration for the CAR-bench leaderboard
+
 [green_agent]
-agentbeats_id = ""
-env = { API_KEY = "${GITHUB_SECRET_NAME}", LOG_LEVEL = "INFO" }
+# Fill in with your registered green agent ID from agentbeats.dev
+agentbeats_id = ""  # TODO: Replace with your green agent ID
+env = { 
+    GEMINI_API_KEY = "${GEMINI_API_KEY}",  # Submitters provide this as GitHub Secret
+    LOGURU_LEVEL = "${LOGURU_LEVEL}"
+}
 
 [[participants]]
-agentbeats_id = ""
-name = "role_1_name"
-env = {}
-
-[[participants]]
-agentbeats_id = ""
-name = "role_2_name"
-env = {}
+# Submitters will fill in their purple agent details
+agentbeats_id = ""  # Submitter: Replace with your purple agent ID
+name = "agent"
+env = { 
+    ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}",  # Submitter: Add as GitHub Secret if used
+    OPENAI_API_KEY = "${OPENAI_API_KEY}",        # Submitter: Add as GitHub Secret if used
+    GEMINI_API_KEY = "${GEMINI_API_KEY}",        # Submitter: Add as GitHub Secret if used
+    AGENT_LLM = "${AGENT_LLM}"                   # Submitter: Specify model (e.g., anthropic/claude-haiku-4-5-20251001)
+}
 
 [config]
-# Add your assessment config here
+# CAR-bench assessment parameters
+num_trials = 3                # Number of trials per task
+tasks_base_start_index = 0    # Start index for base tasks
+tasks_base_end_index = 50    # End index for base tasks
+tasks_hallucination_start_index = 0
+tasks_hallucination_end_index = 50
+tasks_disambiguation_start_index = 0
+tasks_disambiguation_end_index = 50
+max_steps = 50                # Maximum steps per conversation

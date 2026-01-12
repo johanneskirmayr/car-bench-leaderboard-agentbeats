@@ -1,0 +1,8 @@
+# Required packages for running assessments and testing queries
+duckdb>=1.4.0
+pandas>=2.3.0
+numpy>=2.4.0
+tomli>=2.4.0
+tomli-w>=1.2.0
+requests>=2.32.0
+pyyaml>=6.0.0
