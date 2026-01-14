@@ -1,0 +1,29 @@
+# AgentBeats Leaderboard Assessment Scenario
+# This file defines the assessment configuration for the CAR-bench leaderboard
+
+[green_agent]
+# CAR-bench green agent (benchmark environment)
+agentbeats_id = "019bb9d5-c273-7ba0-8beb-34e2fb140c10" 
+# Submitter: Add GEMINI_API_KEY as GitHub Secret (required for CAR-bench)
+env = { GEMINI_API_KEY = "${GEMINI_API_KEY}", LOGURU_LEVEL = "${LOGURU_LEVEL}" }
+
+[[participants]]
+# Submitters will fill in their purple agent details
+agentbeats_id = "019bb9e2-749d-7692-906d-84ea6accef2f"  # Submitter: Replace with your purple agent ID
+name = "agent"
+# Submitter: Add your API keys as GitHub Secrets (use only what your model needs)
+env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", AGENT_LLM = "${AGENT_LLM}", LOGURU_LEVEL = "${LOGURU_LEVEL}" }
+
+[config]
+# CAR-bench assessment parameters
+num_trials = 3                # Number of trials per task
+task_split = "test"  # "train" or "test"
+# Specify number of tasks to run (first N tasks) or use task_id_filter for specific tasks
+tasks_base_num_tasks = -1 # First N tasks in type/split, -1 for all.
+tasks_hallucination_num_tasks = -1 # First N tasks in type/split, -1 for all.
+tasks_disambiguation_num_tasks = -1 # First N tasks in type/split, -1 for all.
+# Alternative: Run specific task IDs, priority over num_tasks. Have to be in the correct type/split (check task_split.json in original car_bench repo).
+# tasks_base_task_id_filter = ["base_0", "base_2"]
+# tasks_hallucination_task_id_filter = ["hallucination_0"]
+# tasks_disambiguation_task_id_filter = ["disambiguation_0"]
+max_steps = 50
