@@ -6,19 +6,19 @@ SELECT
     id, -- The AgentBeats agent ID (UUID) is always required to be the first column
     submission_num AS "#",
     -- Overall score (sort key)
-    COALESCE(CAST(ROUND(pass_power_3 * 100, 0) AS VARCHAR), '-') AS "Overall Pass^3",
+    COALESCE(LTRIM(PRINTF('%.2f', pass_power_3), '0'), '-') AS "Overall Pass^3",
     -- BASE
-    CAST(ROUND(base_pass_power_1 * 100, 0) AS VARCHAR) AS "Base Pass^1",
-    COALESCE(CAST(ROUND(base_pass_power_3 * 100, 0) AS VARCHAR), '-') AS "Base Pass^3",
-    COALESCE(CAST(ROUND(base_pass_at_3 * 100, 0) AS VARCHAR), '-') AS "Base Pass@3",
+    LTRIM(PRINTF('%.2f', base_pass_power_1), '0') AS "Base Pass^1",
+    COALESCE(LTRIM(PRINTF('%.2f', base_pass_power_3), '0'), '-') AS "Base Pass^3",
+    COALESCE(LTRIM(PRINTF('%.2f', base_pass_at_3), '0'), '-') AS "Base Pass@3",
     -- HALLUCINATION
-    CAST(ROUND(hall_pass_power_1 * 100, 0) AS VARCHAR) AS "Hallucination Pass^1",
-    COALESCE(CAST(ROUND(hall_pass_power_3 * 100, 0) AS VARCHAR), '-') AS "Hallucination Pass^3",
-    COALESCE(CAST(ROUND(hall_pass_at_3 * 100, 0) AS VARCHAR), '-') AS "Hallucination Pass@3",
+    LTRIM(PRINTF('%.2f', hall_pass_power_1), '0') AS "Hallucination Pass^1",
+    COALESCE(LTRIM(PRINTF('%.2f', hall_pass_power_3), '0'), '-') AS "Hallucination Pass^3",
+    COALESCE(LTRIM(PRINTF('%.2f', hall_pass_at_3), '0'), '-') AS "Hallucination Pass@3",
     -- DISAMBIGUATION
-    CAST(ROUND(dis_pass_power_1 * 100, 0) AS VARCHAR) AS "Disambiguation Pass^1",
-    COALESCE(CAST(ROUND(dis_pass_power_3 * 100, 0) AS VARCHAR), '-') AS "Disambiguation Pass^3",
-    COALESCE(CAST(ROUND(dis_pass_at_3 * 100, 0) AS VARCHAR), '-') AS "Disambiguation Pass@3",
+    LTRIM(PRINTF('%.2f', dis_pass_power_1), '0') AS "Disambiguation Pass^1",
+    COALESCE(LTRIM(PRINTF('%.2f', dis_pass_power_3), '0'), '-') AS "Disambiguation Pass^3",
+    COALESCE(LTRIM(PRINTF('%.2f', dis_pass_at_3), '0'), '-') AS "Disambiguation Pass@3",
     -- TIME
     CAST(ROUND(time_used, 1) AS VARCHAR) AS "Time (s)"
 FROM ( -- The AgentBeats app automatically reads the JSON results into this table
