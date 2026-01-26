@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/car-bench/car-bench-agentbeats-car-bench-evaluator@sha256:b003bb9288ab24a0f79935186c8ef97354f3421ce1a1ac60a1d80e59008fc5b1",
+    "agent": "ghcr.io/car-bench/car-bench-agentbeats-car-bench-agent@sha256:fee6ab1d465f0371109e564e251e104c98c1df4fb21ca7f368f4906022c5b55f",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-26T16:30:04Z",
+  "github_actions": {
+    "run_url": "https://github.com/johanneskirmayr/car-bench-leaderboard-agentbeats/actions/runs/21356643725",
+    "run_logs_url": "https://api.github.com/repos/johanneskirmayr/car-bench-leaderboard-agentbeats/actions/runs/21356643725/logs",
+    "ref": "refs/heads/main",
+    "sha": "1c5cf6be4a6e3eb97f3c153ac6bd0f712d042df1",
+    "repository_url": "https://github.com/johanneskirmayr/car-bench-leaderboard-agentbeats",
+    "workflow_ref": "johanneskirmayr/car-bench-leaderboard-agentbeats/.github/workflows/run-scenario.yml@refs/heads/main",
+    "workflow_sha": "1c5cf6be4a6e3eb97f3c153ac6bd0f712d042df1"
+  }
+}
