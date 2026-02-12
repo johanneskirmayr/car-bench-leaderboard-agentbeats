@@ -19,6 +19,7 @@ env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", AGENT_LLM = "claude-haiku-4-
 num_trials = 3                # Number of trials per task
 task_split = "train"  # "train" or "test"
 tasks_base_num_tasks = 2 # First N tasks in type/split, -1 for all.
-tasks_hallucination_num_tasks = 2 # First N tasks in type/split, -1 for all.
-tasks_disambiguation_num_tasks = 2 # First N tasks in type/split, -1 for all.
+tasks_hallucination_num_tasks = 0 # First N tasks in type/split, -1 for all.
+tasks_disambiguation_num_tasks = 0 # First N tasks in type/split, -1 for all.
+tasks_base_task_id_filter = ["base_80", "base_86"]
 max_steps = 50
