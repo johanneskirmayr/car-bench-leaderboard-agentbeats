@@ -15,7 +15,7 @@ name = "agent" # do not change
 env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", AGENT_LLM = "claude-haiku-4-5", AGENT_TEMPERATURE = 1.0, AGENT_THINKING = "true", LOGURU_LEVEL = "${LOGURU_LEVEL}" }
 
 [config]
-# CAR-bench assessment parameters
+# CAR-bench assessment parameters.
 num_trials = 3                # Number of trials per task
 task_split = "train"  # "train" or "test"
 tasks_base_num_tasks = 2 # First N tasks in type/split, -1 for all.
